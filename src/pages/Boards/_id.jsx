@@ -11,7 +11,8 @@ function Board() {
       disableGutters
       maxWidth={false}
       sx={{
-        height: '100vh'
+        height: '100vh',
+
       }}
     >
       <AppBar/>
