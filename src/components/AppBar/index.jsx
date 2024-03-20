@@ -20,7 +20,9 @@ function AppBar() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding:'0 8px'
+        padding:'0 8px',
+        overflowX:'auto',
+        gap:2
       }}
     >
       <Box
@@ -53,11 +55,15 @@ function AppBar() {
           >
             Trello
           </Typography>
+          <Box sx={{
+            display:{xs:'none',md:'flex'}
+          }}>
           <Workspaces />
           <Recent />
           <Started />
           <Templates />
           <Button variant="outlined">Create</Button>
+          </Box>
         </Box>
       </Box>
       <Box
@@ -72,6 +78,9 @@ function AppBar() {
           label="Search..."
           type="search"
           size="small"
+          sx={{
+            minWidth:120
+          }}
         />
         <ModeSelect></ModeSelect>
         <Tooltip title="Delete">
