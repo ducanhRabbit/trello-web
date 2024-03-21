@@ -36,8 +36,8 @@ function Profile() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar sx={{
-            width:30,
-            height:30
+            width:36,
+            height:36
           }} alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
         </IconButton>
       </Tooltip>
@@ -53,16 +53,16 @@ function Profile() {
         <MenuList dense>
           <MenuItem onClick={handleClose}>
             <Avatar sx={{
-                width:28,
-                height:28,
-                mr:2
+              width:28,
+              height:28,
+              mr:2
             }} /> Profile
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <Avatar sx={{
-                width:28,
-                height:28,
-                mr:2
+              width:28,
+              height:28,
+              mr:2
             }}/> My account
           </MenuItem>
           <Divider />
