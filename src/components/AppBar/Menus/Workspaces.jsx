@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { Box } from '@mui/material'
+import { Box, colors } from '@mui/material'
 import Divider from '@mui/material/Divider'
 import MenuList from '@mui/material/MenuList'
 import ListItemText from '@mui/material/ListItemText'
@@ -32,6 +32,7 @@ function Workspaces() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         endIcon={<ExpandMoreIcon/>}
+        sx={{color:'white'}}
       >
         Workspaces
       </Button>
