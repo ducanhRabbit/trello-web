@@ -1,10 +1,10 @@
-import { Avatar, AvatarGroup, Box, Chip, Tooltip, Button} from '@mui/material'
+import { Avatar, AvatarGroup, Box, Chip, Tooltip, Button } from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import VpnLockIcon from '@mui/icons-material/VpnLock'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
 import FilterListIcon from '@mui/icons-material/FilterList'
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
 function BoardBar() {
   return (
     <Box px={2} sx={{
@@ -84,37 +84,43 @@ function BoardBar() {
         alignItems:'center',
         gap:2
       }}>
-      <Button sx={{
-        color: 'white',
-        borderColor:'white',
-        '&:hover':{
-          borderColor:'white'
-        }
-      }} variant="outlined" startIcon={<PersonAddIcon/>}>Invite</Button>
+        <Button sx={{
+          color: 'white',
+          borderColor:'white',
+          '&:hover':{
+            borderColor:'white'
+          }
+        }} variant="outlined" startIcon={<PersonAddIcon/>}>Invite</Button>
         <AvatarGroup sx={{
           '& .MuiAvatar-root': {
             width: 34,
             height: 34,
-            fontSize: 16
-          }
-        }} max={7}>
+            fontSize: 16,
+            '&:first-of-type':{
+              backgroundColor:'#a4b0de'
+            }
+          },
+          color:'white',
+          cursor:'pointer',
+          
+        }} max={5}>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
           <Tooltip title={'Tooltip'}>
-          <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
+            <Avatar alt="Remy Sharp" src="https://i.pinimg.com/564x/a5/fc/6e/a5fc6e97abd177846c31c3a0f9d80cba.jpg" />
           </Tooltip>
         </AvatarGroup>
       </Box>
