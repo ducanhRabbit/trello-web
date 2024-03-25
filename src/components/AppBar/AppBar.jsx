@@ -1,5 +1,5 @@
 import { Badge, Box, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
-import ModeSelect from '~/components/ModeSelect'
+import ModeSelect from '~/components/ModeSelect/ModeSelect'
 import AppsIcon from '@mui/icons-material/Apps'
 import { FaTrello } from 'react-icons/fa'
 import Workspaces from './Menus/Workspaces'

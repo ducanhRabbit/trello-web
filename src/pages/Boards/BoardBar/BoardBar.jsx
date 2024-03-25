@@ -7,16 +7,27 @@ import FilterListIcon from '@mui/icons-material/FilterList'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 function BoardBar() {
   return (
-    <Box px={2} sx={{
+    <Box sx={{
+      px:2,
       height:(theme) => theme.trello.boardBarHeight,
       width:'100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       overflowX:'auto',
-      borderBottom:'2px solid #00b894',
-      backgroundColor: (theme) => (theme.palette.mode === 'dark'? '#2c3e50' : '#1976d2')
+      position:'relative',
+      backgroundColor: (theme) => (theme.palette.mode === 'dark'? '#2c3e50' : '#1976d2'),
+      '&::before':{
+        content:'""',
+        position:'absolute',
+        bottom: 0,
+        width: (theme)=> `calc(100% - ${theme.spacing(2)} * 2)`,
+        height:'2px',
+        backgroundColor:'#ecf0f1',
+        borderRadius:'200px'
+      }
     }}>
+      
       <Box >
         <Chip icon={<DashboardIcon />} label="Stacks Board" clickable sx={{
           color: 'white',
