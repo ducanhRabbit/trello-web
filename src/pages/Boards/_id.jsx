@@ -1,9 +1,9 @@
 // Board Details
 
-import { Box, Container, useColorScheme } from '@mui/material'
-import AppBar from '../../components/AppBar'
-import BoardBar from './BoardBar'
-import BoardContent from './BoardContent'
+import { Container } from '@mui/material'
+import AppBar from '../../components/AppBar/AppBar'
+import BoardBar from './BoardBar/BoardBar'
+import BoardContent from './BoardContent/BoardContent'
 
 function Board() {
   return (
@@ -11,7 +11,7 @@ function Board() {
       disableGutters
       maxWidth={false}
       sx={{
-        height: '100vh',
+        height: '100vh'
 
       }}
     >
