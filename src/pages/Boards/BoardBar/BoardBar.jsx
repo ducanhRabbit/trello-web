@@ -5,7 +5,8 @@ import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
-function BoardBar() {
+import { capitalizeFirstLetter } from '~/util/formatter'
+function BoardBar({board}) {
   return (
     <Box sx={{
       px:2,
@@ -26,10 +27,9 @@ function BoardBar() {
         backgroundColor:'#ecf0f1',
         borderRadius:'200px'
       }
-    }}>
-      
+    }}>      
       <Box >
-        <Chip icon={<DashboardIcon />} label="Stacks Board" clickable sx={{
+        <Chip icon={<DashboardIcon />} label={board?.title} clickable sx={{
           color: 'white',
           backgroundColor:'transparent',
           border:'none',
@@ -41,7 +41,7 @@ function BoardBar() {
             backgroundColor:'primary.50'
           }
         }}/>
-        <Chip icon={<VpnLockIcon />} label="Public/Private Workspace" clickable sx={{
+        <Chip icon={<VpnLockIcon />} label={capitalizeFirstLetter(board?.type)} clickable sx={{
           color: 'white',
           backgroundColor:'transparent',
           border:'none',

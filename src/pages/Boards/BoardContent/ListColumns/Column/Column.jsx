@@ -14,11 +14,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import AddCardIcon from '@mui/icons-material/AddCard'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
-
+import {mapOrder} from '~/util/formatter'
 import { useState } from 'react'
 import ListCards from './ListCards/ListCards'
 
-function Column() {
+function Column({column}) {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -27,6 +27,8 @@ function Column() {
   const handleClose = () => {
     setAnchorEl(null)
   }
+  const oderedCards = mapOrder(column?.cards,column?.cardOrderIds,'_id')
+
   return (
     <Box sx={{
       width: '300px',
@@ -43,10 +45,10 @@ function Column() {
         alignItems:'center',
         justifyContent:'space-between'
       }}>
-        <Typography variant='h5' sx={{
+        <Typography variant='h6' sx={{
           fontWeight:'bold',
           cursor:'pointer'
-        }}>Column Title</Typography>
+        }}>{column?.title}</Typography>
         <Box>
           <Tooltip title='More options'>
             <ExpandMoreIcon
@@ -109,7 +111,7 @@ function Column() {
           </Menu>
         </Box>
       </Box>
-    <ListCards/>
+    <ListCards cards={oderedCards}/>
       <Box sx={{
         height: (theme)=> (theme.trello.columnFooterHeight),
         p:2,

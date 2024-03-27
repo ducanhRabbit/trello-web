@@ -2,7 +2,7 @@ import { Box, Button, CardActions, CardContent, CardMedia, Typography } from '@m
 import Card from './Card/Card'
 import { Card as MuiCard } from '@mui/material'
 
-function ListCards() {
+function ListCards({cards}) {
 
   return (
     <Box sx={{
@@ -23,10 +23,7 @@ function ListCards() {
         borderRadius:'8px'
       }
     }}>
-      <Card/>
-      <Card temporaryHideMedia={true}/>
-      <Card temporaryHideMedia={true}/>
-      <Card temporaryHideMedia={true}/>
+      {cards?.map((card)=> (<Card card={card} key={card._id}/>))}
     </Box>
   )
 }
