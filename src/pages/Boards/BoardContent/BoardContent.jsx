@@ -1,6 +1,9 @@
 import { Box } from '@mui/material'
 import ListColumns from './ListColumns/ListColumns'
-function BoardContent() {
+import {mapOrder}  from '~/util/formatter'
+
+function BoardContent({board}) {
+  const oderedColumns = mapOrder(board?.columns,board?.columnOrderIds,'_id')
   return (
     <Box sx={{
       backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
@@ -9,7 +12,7 @@ function BoardContent() {
       display:'flex',
       p:'10px 0'
     }}>
-      <ListColumns/>
+      <ListColumns columns={oderedColumns}/>
     </Box>
 
   )
