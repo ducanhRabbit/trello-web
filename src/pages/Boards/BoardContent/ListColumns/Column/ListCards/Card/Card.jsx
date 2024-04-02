@@ -13,7 +13,8 @@ function Card({ card }) {
     <MuiCard sx={{
       cursor:'pointer',
       boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
-      overflow:'unset'
+      overflow:'hidden',
+      borderRadius:'6px'
     }}>
       {card?.cover && <CardMedia
         sx={{ height: 140 }}
