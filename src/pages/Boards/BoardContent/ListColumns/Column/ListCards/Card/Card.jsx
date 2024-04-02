@@ -5,12 +5,33 @@ import CardMedia from '@mui/material/CardMedia'
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
 import CommentIcon from '@mui/icons-material/Comment'
 import AttachmentIcon from '@mui/icons-material/Attachment'
-
+import {useSortable} from '@dnd-kit/sortable';
+import {CSS} from '@dnd-kit/utilities';
 
 import { Button, Typography } from '@mui/material'
 function Card({ card }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging
+  } = useSortable({id: card._id, data:{...card}});
+  
+  const dndKitCardStyle = {
+    transform: CSS.Translate.toString(transform),
+    transition,
+    opacity: isDragging? '50%': undefined
+  };
+
   return (
-    <MuiCard sx={{
+    <MuiCard
+    ref={setNodeRef}
+     style={dndKitCardStyle}
+     {...attributes}
+     {...listeners} 
+    sx={{
       cursor:'pointer',
       boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
       overflow:'hidden',
