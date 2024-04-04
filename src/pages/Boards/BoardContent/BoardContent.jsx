@@ -46,6 +46,27 @@ function BoardContent({board}) {
     }),
   };
 
+  const findColumnByCardId =(cardId)=>{
+    oderedColumnsState.find(col => col?.cards.map(card => card._id).includes(cardId))
+  } 
+
+  const handleDragOver = (e)=>{
+    const {active, over} = e
+
+    if(activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.COLUMN) return
+
+    const {id: activeDraggingCardId, data:{current: activeDraggingCardData}} = active
+    const {id: overCardId} = over
+
+    const activeColumn = findColumnByCardId(activeDraggingCardId)
+    const overColumn = findColumnByCardId(overCardId)
+
+    if(activeColumn._id !== overColumn._id){
+      console.log('Run')
+    }
+
+  }
+
   const handleDragEnd = (e)=>{
     console.log(e)
     const {active,over} = e
